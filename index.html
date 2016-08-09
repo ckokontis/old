@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Claire Kokontis </title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" href="icons/font-awesome-4.1.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+  <section class="jumbotron">
+    <div class="container">
+      <div class="row text-center">
+        <div class="slider">
+          <div class="slide active-slide" style="width:100%">
+            <div class="container" style="width:100%">
+              <div class="row">
+                <div class="slide-img" style="width:100%">
+                <img src="Jewelry/img_1371_O.jpg">
+              </div>
+            </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  </section>
+
+  <footer class="container">
+   <div class="row">
+     <h1 class="col-sm-4">Claire Kokontis</h1>
+     <nav class="col-sm-8 text-right">
+
+       <ul class="menu" >
+         <li class="dropdown"><a href="#d" style="text-decoration:none;"class="dropdown-toggle" >Portfolio<b class="caret"></b></a>
+           <ul class="dropdown-menu">
+             <li><a href="2016.html">2016</a></li>
+             <li><a href="2015.html">2015</a></li>
+             <li><a href="2014.html">2014</a></li>
+             <li><a href="sketchbook.html" >Sketchbook</a></li>
+           </ul>
+         </li>
+
+       </ul>
+
+      <a href="jewelry3.html" style="text-decoration:none;"> <p>Jewelry</p> </a>
+      <a href="make3.html" style="text-decoration:none;"><p>Projects</p></a>
+     </nav>
+   </div>
+  </footer>
+
+  <script>
+
+  var main = function() {
+   $('.dropdown-toggle').click(function() {
+       $('.dropdown-menu').toggle();
+});
+   $('.arrow-next').click(function(){
+       var currentSlide = $('.active-slide');
+       var nextSlide = currentSlide.next();
+
+       var currentDot = $('.active-dot');
+       var nextDot = currentDot.next();
+
+       if (nextSlide.length == 0){
+       nextSlide = $('.slide').first();
+       nextDot = $('.dot').first();
+       }
+
+       currentSlide.fadeOut(600).removeClass('active-slide');
+       nextSlide.fadeIn(600).addClass('active-slide');
+
+       currentDot.removeClass('active-dot');
+       nextDot.addClass('active-dot');
+   });
+
+    $('.arrow-prev').click(function(){
+       var currentSlide = $('.active-slide');
+       var prevSlide = currentSlide.prev();
+
+       var currentDot = $('.active-dot');
+       var prevDot = currentDot.prev();
+
+       if(prevSlide.length == 0){
+       prevSlide = $('.slide').last();
+       prevDot = $('.dot').last();
+       }
+
+       currentSlide.fadeOut(600).removeClass('active-slide');
+       prevSlide.fadeIn(600).addClass('active-slide');
+
+       currentDot.removeClass('active-dot');
+       prevDot.addClass('active-dot');
+    });
+}
+
+$(document).ready(main);
+
+</script>
+
+  <script src="jquery.min.js"></script>
+      <script src="app.js"></script>
+</body>
+
+</html>

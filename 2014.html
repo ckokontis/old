@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Claire Kokontis </title>
+		<link rel="stylesheet" type="text/css" href="2014.css">
+		<link rel="stylesheet" href="icons/font-awesome-4.1.0/css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet'>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<header>
+	<div class="header">
+		<nav class="col-sm-6 text-left">
+		 <a href="index.html" style="text-decoration:none;"> <p class="back">Claire Kokontis</p> </a>
+		</nav>
+		<nav class="col-sm-6 text-right">
+		<ul class="menu" >
+			<li class="dropdown"><a href="#d" style="text-decoration:none;"class="dropdown-toggle" >Portfolio<b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="2016.html">2016</a></li>
+					<li><a href="2015.html">2015</a></li>
+					<li><a href="2014.html">2014</a></li>
+					<li><a href="sketchbook.html" >Sketchbook</a></li>
+				</ul>
+			</li>
+			<li><a href="jewelry3.html" style="text-decoration:none;">Jewelry</a></li>
+			<li><a href="make3.html" style="text-decoration:none;">Make</a></li>
+		</ul>
+	</nav>
+	</div>
+	<div class="container">
+		<div class="title" class="row">
+			<h1 class="col-sm-12 text-center">WORK / 2014</h1>
+		</div>
+	</div>
+</header>
+<body>
+
+
+    <div class="slider">
+
+      <div class="slide active-slide">
+        <div class="container" style="width=100%">
+          <div class="row" >
+           <div class="slide-img  col-xs-12">
+            <img class="scale-down-img" src="Art/The Holy Land.jpg"></a>
+              <!-- <a href="portfolio.html"><img src="Images/Art/1172400_clairek.JPG"></a> -->
+							<p> "The Holy City" | Charcoal | 24" x 18"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-img  col-xs-12">
+              <img style="width=800px"src="Art/Still.JPG" ></a>
+							<p> "Still Life" | Acrylic | 20" x 16"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-img col-xs-12" >
+              <img src="Art/Self.jpg"></a>
+							<p>"Reflect" | Acrylic | 23" x 18" </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="container">
+          <div class="row_h">
+           <div class="slide-img col-xs-12">
+              <img src="Art/IMG96.JPG" ></a>
+							<p> "Self" | Pastel | 18" x 24" </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-img col-xs-12">
+            <img src="Art/IMG88.JPG" ></a>
+						<p> Figure Study | Pastel | 24" x 24" </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+    <div class="slider-nav">
+
+       <a href="#" class="arrow-prev">
+         <div class="i">
+            <i class="fa fa-chevron-left fa"></i>
+          </div>
+         </a>
+
+
+
+
+      <ul class="slider-dots">
+        <li class="dot active-dot"><i class="fa fa-square" aria-hidden="true"></i></li>
+        <li class="dot"><i class="fa fa-square" aria-hidden="true"></i></li>
+        <li class="dot"><i class="fa fa-square" aria-hidden="true"></i></li>
+        <li class="dot"><i class="fa fa-square" aria-hidden="true"></i></li>
+				<li class="dot"><i class="fa fa-square" aria-hidden="true"></i></li>
+
+      </ul>
+
+      <a href="#" class="arrow-next">
+        <div class="i">
+           <i class="fa fa-chevron-right fa"></i>
+         </div>
+     </a>
+
+    </div>
+
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+   <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+   <script>
+
+   var main = function() {
+    $('.dropdown-toggle').click(function() {
+        $('.dropdown-menu').toggle();
+});
+    $('.arrow-next').click(function(){
+        var currentSlide = $('.active-slide');
+        var nextSlide = currentSlide.next();
+
+        var currentDot = $('.active-dot');
+        var nextDot = currentDot.next();
+
+        if (nextSlide.length == 0){
+        nextSlide = $('.slide').first();
+        nextDot = $('.dot').first();
+        }
+
+        currentSlide.fadeOut(600).removeClass('active-slide');
+        nextSlide.fadeIn(600).addClass('active-slide');
+
+        currentDot.removeClass('active-dot');
+        nextDot.addClass('active-dot');
+    });
+
+     $('.arrow-prev').click(function(){
+        var currentSlide = $('.active-slide');
+        var prevSlide = currentSlide.prev();
+
+        var currentDot = $('.active-dot');
+        var prevDot = currentDot.prev();
+
+        if(prevSlide.length == 0){
+        prevSlide = $('.slide').last();
+        prevDot = $('.dot').last();
+        }
+
+        currentSlide.fadeOut(600).removeClass('active-slide');
+        prevSlide.fadeIn(600).addClass('active-slide');
+
+        currentDot.removeClass('active-dot');
+        prevDot.addClass('active-dot');
+     });
+}
+
+$(document).ready(main);
+
+</script>
+
+
+</body>
+
+</html>
